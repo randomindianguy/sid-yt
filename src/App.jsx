@@ -74,16 +74,16 @@ const SS_ERROR = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgs
 
 // ── Shared ──
 const Mono = ({children, color, style}) => (
-  <span style={{ fontFamily: F.mono, fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", color: color || C.red, ...style }}>{children}</span>
+  <span style={{ fontFamily: F.mono, fontSize: "13px", letterSpacing: "0.12em", textTransform: "uppercase", color: color || C.red, ...style }}>{children}</span>
 );
 const H2 = ({children}) => (
   <h2 style={{ fontFamily: F.serif, fontSize: "clamp(30px,5vw,52px)", color: C.text, lineHeight: 1.12, fontWeight: 400, margin: "0 0 20px" }}>{children}</h2>
 );
 const Sub = ({children, style}) => (
-  <p style={{ fontFamily: F.sans, fontSize: "16px", color: C.sub, lineHeight: 1.7, maxWidth: "580px", margin: "0 0 48px", ...style }}>{children}</p>
+  <p style={{ fontFamily: F.sans, fontSize: "18px", color: C.sub, lineHeight: 1.7, maxWidth: "580px", margin: "0 0 48px", ...style }}>{children}</p>
 );
 const Pill = ({children, color, bg}) => (
-  <span style={{ fontFamily: F.mono, fontSize: "9px", letterSpacing: "0.08em", color, background: bg, padding: "3px 8px", borderRadius: "3px", textTransform: "uppercase", fontWeight: 500 }}>{children}</span>
+  <span style={{ fontFamily: F.mono, fontSize: "11px", letterSpacing: "0.08em", color, background: bg, padding: "3px 8px", borderRadius: "3px", textTransform: "uppercase", fontWeight: 500 }}>{children}</span>
 );
 
 // ── Nav ──
@@ -149,12 +149,12 @@ function TimelineViz() {
               borderRadius: "6px", cursor: "pointer", transition: "all 0.25s", position: "relative",
               ...(miss ? { boxShadow: "0 0 24px rgba(255,0,0,0.08)" } : {}),
             }}>
-            <div style={{ fontFamily: F.mono, fontSize: "9px", color: miss ? C.red : part ? C.yellow : C.dim, letterSpacing: "0.1em", marginBottom: miss ? "8px" : "4px" }}>{t.id}</div>
+            <div style={{ fontFamily: F.mono, fontSize: "11px", color: miss ? C.red : part ? C.yellow : C.dim, letterSpacing: "0.1em", marginBottom: miss ? "8px" : "4px" }}>{t.id}</div>
             <div style={{ fontFamily: F.sans, fontSize: miss ? "14px" : "12px", fontWeight: miss ? 600 : 500, color: miss ? C.text : active ? C.sub : C.dim }}>{t.l}</div>
             {miss && (
               <div style={{ marginTop: "10px" }}>
                 <Pill color={C.red} bg={C.redGlow}>★ No surface exists</Pill>
-                <p style={{ fontFamily: F.sans, fontSize: "12px", color: C.sub, lineHeight: 1.5, marginTop: "10px" }}>
+                <p style={{ fontFamily: F.sans, fontSize: "14px", color: C.sub, lineHeight: 1.5, marginTop: "10px" }}>
                   {t.d}
                 </p>
               </div>
@@ -164,7 +164,7 @@ function TimelineViz() {
                 <Pill color={t.s === "shipped" ? C.green : C.yellow} bg={t.s === "shipped" ? C.greenDim : C.yellowDim}>
                   {t.s === "shipped" ? "● Shipped" : "◇ Partial"}
                 </Pill>
-                <p style={{ fontFamily: F.sans, fontSize: "11px", color: C.dim, lineHeight: 1.4, marginTop: "6px" }}>
+                <p style={{ fontFamily: F.sans, fontSize: "13px", color: C.dim, lineHeight: 1.4, marginTop: "6px" }}>
                   {t.d}
                 </p>
               </div>
@@ -195,15 +195,15 @@ function Evidence() {
       <div className="grid-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px", marginBottom: "48px" }}>
         <Card>
           <Pill color={C.dim} bg="rgba(255,255,255,0.04)">CURRENT: SHOWCASE PROMPTS</Pill>
-          <h3 style={{ fontFamily: F.sans, fontSize: "17px", fontWeight: 600, color: C.text, margin: "16px 0 14px" }}>
+          <h3 style={{ fontFamily: F.sans, fontSize: "19px", fontWeight: 600, color: C.text, margin: "16px 0 14px" }}>
             Pre-written ideas to pick from
           </h3>
           <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
             {["🦖 T-Rex fails to make a bed because his arms are too short", "🐙 Make me fight a giant octopus", "🐹 Hamster scratching vinyl record", "🐱 Cute, sad cat wrapped in a comfy blanket", "🐿️ Make me lose badly in chess against a squirrel"].map((p,i) => (
-              <div key={i} style={{ fontFamily: F.sans, fontSize: "13px", color: C.sub, padding: "10px 12px", background: "rgba(255,255,255,0.03)", borderRadius: "8px", border: `1px solid rgba(255,255,255,0.05)` }}>{p}</div>
+              <div key={i} style={{ fontFamily: F.sans, fontSize: "15px", color: C.sub, padding: "10px 12px", background: "rgba(255,255,255,0.03)", borderRadius: "8px", border: `1px solid rgba(255,255,255,0.05)` }}>{p}</div>
             ))}
           </div>
-          <p style={{ fontFamily: F.sans, fontSize: "12px", color: C.dim, marginTop: "16px", lineHeight: 1.6 }}>
+          <p style={{ fontFamily: F.sans, fontSize: "14px", color: C.dim, marginTop: "16px", lineHeight: 1.6 }}>
             Amusing. Identical for every user. No connection to what you watch,
             care about, or would actually post. The format is: here's a finished idea, take it or leave it.
           </p>
@@ -211,17 +211,17 @@ function Evidence() {
 
         <Card>
           <Pill color={C.dim} bg="rgba(255,255,255,0.04)">CURRENT: BLANK TEXT FIELD</Pill>
-          <h3 style={{ fontFamily: F.sans, fontSize: "17px", fontWeight: 600, color: C.text, margin: "16px 0 14px" }}>
+          <h3 style={{ fontFamily: F.sans, fontSize: "19px", fontWeight: 600, color: C.text, margin: "16px 0 14px" }}>
             "Describe your idea"
           </h3>
           <div style={{ background: "rgba(255,255,255,0.03)", borderRadius: "12px", border: `1px solid rgba(255,255,255,0.06)`, padding: "48px 20px", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: "16px", minHeight: "220px" }}>
             <div style={{ width: "100%", padding: "14px 16px", borderRadius: "24px", background: "rgba(255,255,255,0.06)", border: `1px solid rgba(255,255,255,0.08)`, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <span style={{ fontFamily: F.sans, fontSize: "14px", color: C.dim }}>Describe your idea</span>
-              <span style={{ fontSize: "18px", color: C.dim }}>→</span>
+              <span style={{ fontFamily: F.sans, fontSize: "16px", color: C.dim }}>Describe your idea</span>
+              <span style={{ fontSize: "20px", color: C.dim }}>→</span>
             </div>
-            <span style={{ fontFamily: F.sans, fontSize: "12px", color: C.dim }}>The blank-page problem, inside a creation tool built to eliminate blank pages.</span>
+            <span style={{ fontFamily: F.sans, fontSize: "14px", color: C.dim }}>The blank-page problem, inside a creation tool built to eliminate blank pages.</span>
           </div>
-          <p style={{ fontFamily: F.sans, fontSize: "12px", color: C.dim, marginTop: "16px", lineHeight: 1.6 }}>
+          <p style={{ fontFamily: F.sans, fontSize: "14px", color: C.dim, marginTop: "16px", lineHeight: 1.6 }}>
             GenAI was supposed to remove the skill barrier. But knowing what to type is itself
             a skill. The articulation gap moves, it doesn't disappear.
           </p>
@@ -231,16 +231,15 @@ function Evidence() {
       {/* Friction strip */}
       <div className="grid-4" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "12px" }}>
         {[
-          { n: "1", t: "Generic prompts", d: "Same for every user", e: "🎭" },
-          { n: "2", t: "Blank text field", d: "\"Describe your idea\"", e: "📝" },
-          { n: "3", t: "Long generation", d: "10% progress bar, peak drop-off risk", e: "⏳" },
-          { n: "4", t: "\"Something went wrong\"", d: "No recovery. One-and-done exit", e: "❌" },
+          { n: "1", t: "Generic prompts", d: "Same for every user" },
+          { n: "2", t: "Blank text field", d: "\"Describe your idea\"" },
+          { n: "3", t: "Long generation", d: "10% progress bar, peak drop-off risk" },
+          { n: "4", t: "\"Something went wrong\"", d: "No recovery. One-and-done exit" },
         ].map(s => (
           <div key={s.n} style={{ padding: "20px 16px", background: C.card, border: `1px solid ${C.border}`, borderRadius: "8px" }}>
-            <div style={{ fontFamily: F.mono, fontSize: "9px", color: C.dim, marginBottom: "10px", fontWeight: 600 }}>STEP {s.n}</div>
-            <div style={{ fontSize: "20px", marginBottom: "8px" }}>{s.e}</div>
-            <div style={{ fontFamily: F.sans, fontSize: "13px", fontWeight: 600, color: C.text, marginBottom: "4px" }}>{s.t}</div>
-            <div style={{ fontFamily: F.sans, fontSize: "11px", color: C.dim, lineHeight: 1.5 }}>{s.d}</div>
+            <div style={{ fontFamily: F.mono, fontSize: "11px", color: C.dim, marginBottom: "10px", fontWeight: 600 }}>STEP {s.n}</div>
+            <div style={{ fontFamily: F.sans, fontSize: "15px", fontWeight: 600, color: C.text, marginBottom: "4px" }}>{s.t}</div>
+            <div style={{ fontFamily: F.sans, fontSize: "13px", color: C.dim, lineHeight: 1.5 }}>{s.d}</div>
           </div>
         ))}
       </div>
@@ -267,7 +266,7 @@ function ScreenshotStrip() {
     <div style={{ marginTop: "32px" }}>
       <button onClick={() => setOpen(!open)} style={{
         background: "none", border: `1px solid ${C.border}`, borderRadius: "8px",
-        padding: "10px 16px", cursor: "pointer", fontFamily: F.mono, fontSize: "11px",
+        padding: "10px 16px", cursor: "pointer", fontFamily: F.mono, fontSize: "13px",
         color: C.sub, letterSpacing: "0.08em", fontWeight: 500,
       }}>
         {open ? "Hide" : "View"} actual screenshots from the live product {open ? "↑" : "↓"}
@@ -277,7 +276,7 @@ function ScreenshotStrip() {
           {shots.map((s, i) => (
             <div key={i} style={{ flexShrink: 0, textAlign: "center" }}>
               <img src={s.src} alt={s.label} style={{ height: "280px", borderRadius: "12px", border: `1px solid ${C.border}` }} />
-              <p style={{ fontFamily: F.mono, fontSize: "9px", color: C.dim, marginTop: "8px", maxWidth: "140px" }}>{s.label}</p>
+              <p style={{ fontFamily: F.mono, fontSize: "11px", color: C.dim, marginTop: "8px", maxWidth: "140px" }}>{s.label}</p>
             </div>
           ))}
         </div>
@@ -313,11 +312,11 @@ function Diagnosis() {
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "14px" }}>
               <span style={{ fontFamily: F.serif, fontSize: "36px", fontStyle: "italic", color: m.sc }}>{m.l}</span>
               <div>
-                <div style={{ fontFamily: F.sans, fontSize: "15px", fontWeight: 600, color: C.text }}>{m.n}</div>
+                <div style={{ fontFamily: F.sans, fontSize: "17px", fontWeight: 600, color: C.text }}>{m.n}</div>
                 <Pill color={m.sc} bg={m.sc === C.green ? C.greenDim : m.sc === C.yellow ? C.yellowDim : m.sc === C.orange ? C.orangeDim : C.redGlow}>{m.st}</Pill>
               </div>
             </div>
-            <p style={{ fontFamily: F.sans, fontSize: "13px", color: C.sub, lineHeight: 1.65 }}>{m.d}</p>
+            <p style={{ fontFamily: F.sans, fontSize: "15px", color: C.sub, lineHeight: 1.65 }}>{m.d}</p>
           </Card>
         ))}
       </div>
@@ -327,8 +326,8 @@ function Diagnosis() {
         <div className="axis-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1px 1fr", gap: "28px" }}>
           <div>
             <Pill color={C.dim} bg="rgba(255,255,255,0.04)">CONTENT AXIS — WHERE YOUTUBE IS INVESTING</Pill>
-            <h3 style={{ fontFamily: F.sans, fontSize: "16px", fontWeight: 600, color: C.text, margin: "14px 0 8px" }}>Improve WHAT gets suggested</h3>
-            <p style={{ fontFamily: F.sans, fontSize: "13px", color: C.sub, lineHeight: 1.65 }}>
+            <h3 style={{ fontFamily: F.sans, fontSize: "18px", fontWeight: 600, color: C.text, margin: "14px 0 8px" }}>Improve WHAT gets suggested</h3>
+            <p style={{ fontFamily: F.sans, fontSize: "15px", color: C.sub, lineHeight: 1.65 }}>
               Veo 3 and AI avatars improve the models. Inspiration Tab updates improve the prompt cards.
               Edit with AI improves post-creation. Every investment targets the
               content of the suggestion or the quality of the output.
@@ -337,8 +336,8 @@ function Diagnosis() {
           <div className="axis-divider" style={{ background: C.border }} />
           <div>
             <Pill color={C.red} bg={C.redGlow}>INTERACTION AXIS — UNOWNED</Pill>
-            <h3 style={{ fontFamily: F.sans, fontSize: "16px", fontWeight: 600, color: C.text, margin: "14px 0 8px" }}>Change HOW the user gets to a prompt</h3>
-            <p style={{ fontFamily: F.sans, fontSize: "13px", color: C.sub, lineHeight: 1.65 }}>
+            <h3 style={{ fontFamily: F.sans, fontSize: "18px", fontWeight: 600, color: C.text, margin: "14px 0 8px" }}>Change HOW the user gets to a prompt</h3>
+            <p style={{ fontFamily: F.sans, fontSize: "15px", color: C.sub, lineHeight: 1.65 }}>
               Treat first-prompt formation as a clarification problem. Extract what
               the creator already knows through 30 seconds of tappable disambiguation,
               rather than pushing a suggestion. Personalization makes the wrong
@@ -391,10 +390,10 @@ function Demo() {
         }}>
           {/* Status bar */}
           <div style={{ padding: "12px 24px 8px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span style={{ fontFamily: F.sans, fontSize: "13px", fontWeight: 600, color: C.text }}>1:07</span>
+            <span style={{ fontFamily: F.sans, fontSize: "15px", fontWeight: 600, color: C.text }}>1:07</span>
             <div style={{ display: "flex", gap: "5px", alignItems: "center" }}>
-              <span style={{ fontSize: "11px", color: C.text }}>📶</span>
-              <span style={{ fontSize: "11px", color: C.text }}>🔋</span>
+              <span style={{ fontSize: "13px", color: C.text }}>📶</span>
+              <span style={{ fontSize: "13px", color: C.text }}>🔋</span>
             </div>
           </div>
 
@@ -402,11 +401,11 @@ function Demo() {
           <div style={{ padding: "8px 20px 12px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
               <span style={{ fontSize: "20px", color: C.text, cursor: "pointer" }} onClick={reset}>←</span>
-              <span style={{ fontFamily: F.sans, fontSize: "16px", fontWeight: 700, color: C.text }}>Create video</span>
+              <span style={{ fontFamily: F.sans, fontSize: "18px", fontWeight: 700, color: C.text }}>Create video</span>
             </div>
             {niche && (
               <div style={{ width: "28px", height: "28px", borderRadius: "50%", background: "rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ fontSize: "14px" }}>✦</span>
+                <span style={{ fontSize: "16px" }}>✦</span>
               </div>
             )}
           </div>
@@ -415,10 +414,10 @@ function Demo() {
           <div style={{ padding: "8px 16px", minHeight: "440px", display: "flex", flexDirection: "column" }}>
             {!niche && (
               <>
-                <p style={{ fontFamily: F.mono, fontSize: "9px", color: C.dim, letterSpacing: "0.1em", marginBottom: "6px", textTransform: "uppercase" }}>
+                <p style={{ fontFamily: F.mono, fontSize: "11px", color: C.dim, letterSpacing: "0.1em", marginBottom: "6px", textTransform: "uppercase" }}>
                   Detected from your viewing history
                 </p>
-                <p style={{ fontFamily: F.sans, fontSize: "15px", fontWeight: 600, color: C.text, marginBottom: "20px" }}>
+                <p style={{ fontFamily: F.sans, fontSize: "17px", fontWeight: 600, color: C.text, marginBottom: "20px" }}>
                   What world do you want to create in?
                 </p>
                 {Object.entries(trees).map(([name, data]) => (
@@ -433,8 +432,8 @@ function Demo() {
                   >
                     <span style={{ fontSize: "22px" }}>{data.icon}</span>
                     <div style={{ textAlign: "left" }}>
-                      <div style={{ fontFamily: F.sans, fontSize: "14px", fontWeight: 600, color: C.text }}>{name}</div>
-                      <div style={{ fontFamily: F.sans, fontSize: "11px", color: C.dim }}>{data.detected}</div>
+                      <div style={{ fontFamily: F.sans, fontSize: "16px", fontWeight: 600, color: C.text }}>{name}</div>
+                      <div style={{ fontFamily: F.sans, fontSize: "13px", color: C.dim }}>{data.detected}</div>
                     </div>
                   </button>
                 ))}
@@ -453,10 +452,10 @@ function Demo() {
                     }} />
                   ))}
                 </div>
-                <p style={{ fontFamily: F.mono, fontSize: "9px", color: C.dim, letterSpacing: "0.1em", marginBottom: "4px", textTransform: "uppercase" }}>
+                <p style={{ fontFamily: F.mono, fontSize: "11px", color: C.dim, letterSpacing: "0.1em", marginBottom: "4px", textTransform: "uppercase" }}>
                   {qIdx + 1} of {tree.questions.length}
                 </p>
-                <p style={{ fontFamily: F.sans, fontSize: "17px", fontWeight: 600, color: C.text, marginBottom: "20px", lineHeight: 1.35 }}>
+                <p style={{ fontFamily: F.sans, fontSize: "19px", fontWeight: 600, color: C.text, marginBottom: "20px", lineHeight: 1.35 }}>
                   {tree.questions[qIdx].q}
                 </p>
                 {tree.questions[qIdx].opts.map((opt, i) => (
@@ -464,7 +463,7 @@ function Demo() {
                     width: "100%", padding: "13px 16px", marginBottom: "8px",
                     background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)",
                     borderRadius: "12px", cursor: "pointer", textAlign: "left",
-                    fontFamily: F.sans, fontSize: "14px", color: C.text,
+                    fontFamily: F.sans, fontSize: "16px", color: C.text,
                     transition: "all 0.15s",
                   }}
                   onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,0,0,0.12)"; e.currentTarget.style.borderColor = C.redBorder; }}
@@ -473,7 +472,7 @@ function Demo() {
                     {opt}
                   </button>
                 ))}
-                <button onClick={reset} style={{ fontFamily: F.sans, fontSize: "12px", color: C.dim, background: "none", border: "none", cursor: "pointer", marginTop: "12px", padding: "4px 0" }}>
+                <button onClick={reset} style={{ fontFamily: F.sans, fontSize: "14px", color: C.dim, background: "none", border: "none", cursor: "pointer", marginTop: "12px", padding: "4px 0" }}>
                   ← Start over
                 </button>
               </>
@@ -486,34 +485,34 @@ function Demo() {
                   marginTop: "16px", padding: "16px", background: "rgba(255,255,255,0.05)",
                   borderRadius: "12px", border: "1px solid rgba(255,255,255,0.1)",
                 }}>
-                  <p style={{ fontFamily: F.sans, fontSize: "15px", color: C.text, lineHeight: 1.55, fontWeight: 500 }}>
+                  <p style={{ fontFamily: F.sans, fontSize: "17px", color: C.text, lineHeight: 1.55, fontWeight: 500 }}>
                     {tree.build(ans)}
                   </p>
                 </div>
 
                 <div style={{ margin: "20px 0 12px", display: "flex", gap: "8px" }}>
                   {ans.map((a, i) => (
-                    <span key={i} style={{ fontFamily: F.mono, fontSize: "9px", color: C.sub, background: "rgba(255,255,255,0.06)", padding: "4px 8px", borderRadius: "4px", fontWeight: 500 }}>
+                    <span key={i} style={{ fontFamily: F.mono, fontSize: "11px", color: C.sub, background: "rgba(255,255,255,0.06)", padding: "4px 8px", borderRadius: "4px", fontWeight: 500 }}>
                       Q{i+1}: {a.length > 22 ? a.slice(0,22) + "…" : a}
                     </span>
                   ))}
                 </div>
 
                 <div style={{ marginTop: "20px", padding: "14px", background: C.redGlow, borderRadius: "10px", border: `1px solid ${C.redBorder}` }}>
-                  <p style={{ fontFamily: F.mono, fontSize: "9px", color: C.red, letterSpacing: "0.1em", marginBottom: "6px" }}>YOUTUBE CURRENTLY SUGGESTS</p>
-                  <p style={{ fontFamily: F.sans, fontSize: "13px", color: C.sub }}>"{tree.generic}"</p>
+                  <p style={{ fontFamily: F.mono, fontSize: "11px", color: C.red, letterSpacing: "0.1em", marginBottom: "6px" }}>YOUTUBE CURRENTLY SUGGESTS</p>
+                  <p style={{ fontFamily: F.sans, fontSize: "15px", color: C.sub }}>"{tree.generic}"</p>
                 </div>
 
                 <div style={{ display: "flex", gap: "8px", marginTop: "20px" }}>
                   <button onClick={reset} style={{
                     flex: 1, padding: "12px", borderRadius: "24px",
                     background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)",
-                    fontFamily: F.sans, fontSize: "13px", color: C.text, cursor: "pointer",
+                    fontFamily: F.sans, fontSize: "15px", color: C.text, cursor: "pointer",
                   }}>Try another niche</button>
                   <button style={{
                     flex: 1, padding: "12px", borderRadius: "24px",
                     background: C.red, border: "none",
-                    fontFamily: F.sans, fontSize: "13px", fontWeight: 600, color: C.text, cursor: "pointer",
+                    fontFamily: F.sans, fontSize: "15px", fontWeight: 600, color: C.text, cursor: "pointer",
                   }}>Create with this →</button>
                 </div>
               </div>
@@ -527,14 +526,14 @@ function Demo() {
             background: "linear-gradient(transparent, rgba(0,0,0,0.9))",
           }}>
             {["🎭 Effects", "📷 Upload", "♫ Sound"].map(item => (
-              <span key={item} style={{ fontFamily: F.sans, fontSize: "10px", color: C.dim }}>{item}</span>
+              <span key={item} style={{ fontFamily: F.sans, fontSize: "12px", color: C.dim }}>{item}</span>
             ))}
           </div>
         </div>
 
         {/* Right side - annotation */}
         <div className="demo-annotations" style={{ flex: 1, paddingTop: "40px", maxWidth: "400px" }}>
-          <h3 style={{ fontFamily: F.sans, fontSize: "18px", fontWeight: 600, color: C.text, marginBottom: "16px" }}>
+          <h3 style={{ fontFamily: F.sans, fontSize: "20px", fontWeight: 600, color: C.text, marginBottom: "16px" }}>
             What's different
           </h3>
           {[
@@ -545,8 +544,8 @@ function Demo() {
             { label: "Ownership", desc: "The user chose every component. The prompt feels like theirs, not a suggestion they settled for." },
           ].map(item => (
             <div key={item.label} style={{ marginBottom: "20px" }}>
-              <div style={{ fontFamily: F.sans, fontSize: "14px", fontWeight: 600, color: C.text, marginBottom: "4px" }}>{item.label}</div>
-              <p style={{ fontFamily: F.sans, fontSize: "13px", color: C.sub, lineHeight: 1.6 }}>{item.desc}</p>
+              <div style={{ fontFamily: F.sans, fontSize: "16px", fontWeight: 600, color: C.text, marginBottom: "4px" }}>{item.label}</div>
+              <p style={{ fontFamily: F.sans, fontSize: "15px", color: C.sub, lineHeight: 1.6 }}>{item.desc}</p>
             </div>
           ))}
         </div>
@@ -561,25 +560,25 @@ function Strategy() {
     <section id="strategy" style={{ padding: "100px 40px", maxWidth: "1100px", margin: "0 auto" }}>
       <Mono>The case</Mono>
       <H2>
-        Here's why it hasn't been built.
-        <br /><span style={{ color: C.dim }}>And how an intern ships it in 12 weeks.</span>
+        Here's why this is hard.
+        <br /><span style={{ color: C.dim }}>And how an intern ships a test in 12 weeks.</span>
       </H2>
 
       {/* Why hasn't YouTube done this — LEAD with this */}
       <Card>
-        <Pill color={C.yellow} bg={C.yellowDim}>WHY THIS GAP EXISTS</Pill>
-        <h3 style={{ fontFamily: F.sans, fontSize: "17px", fontWeight: 600, color: C.text, margin: "16px 0 12px" }}>
-          Three structural reasons this hasn't been built
+        <Pill color={C.yellow} bg={C.yellowDim}>WHY THIS IS HARD</Pill>
+        <h3 style={{ fontFamily: F.sans, fontSize: "19px", fontWeight: 600, color: C.text, margin: "16px 0 12px" }}>
+          Three reasons this problem is non-obvious
         </h3>
         <div className="grid-3" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "16px" }}>
           {[
-            { t: "Org reflex", d: "The instinct is \"more data → better prompts.\" Personalization is the dominant mental model. Disambiguation (fewer, narrower prompts) is the opposite reflex." },
-            { t: "Different team DNA", d: "Disambiguation is a chat-assistant UX pattern (conversational, branching, stateful). YouTube's creation tools are built by a content-recommendation team. Different interaction paradigm." },
-            { t: "New operational cost", d: "Q-tree authoring (writing, testing, and maintaining niche-specific question branches) is a new kind of investment YouTube hasn't had to make for creation tools." },
+            { t: "It looks like a content problem", d: "The natural instinct is \"better data → better prompts.\" Disambiguation says the opposite: fewer prompts, more narrowing. That's counterintuitive if personalization is your default lens." },
+            { t: "It's a different interaction pattern", d: "Disambiguation is conversational, branching, stateful. Most creation tools are built around content recommendation. The UX pattern is unfamiliar to the surface." },
+            { t: "It requires new authoring work", d: "Q-tree authoring (writing, testing, maintaining niche-specific question branches) is a different kind of investment than model improvement or prompt curation." },
           ].map(r => (
             <div key={r.t}>
-              <div style={{ fontFamily: F.sans, fontSize: "14px", fontWeight: 600, color: C.text, marginBottom: "6px" }}>{r.t}</div>
-              <p style={{ fontFamily: F.sans, fontSize: "12px", color: C.sub, lineHeight: 1.6 }}>{r.d}</p>
+              <div style={{ fontFamily: F.sans, fontSize: "16px", fontWeight: 600, color: C.text, marginBottom: "6px" }}>{r.t}</div>
+              <p style={{ fontFamily: F.sans, fontSize: "14px", color: C.sub, lineHeight: 1.6 }}>{r.d}</p>
             </div>
           ))}
         </div>
@@ -593,11 +592,11 @@ function Strategy() {
               { w: "Week 1–2", d: "Author hardcoded Q-trees for initial niches. Demo above shows three from my own viewing history. Production scope: top 5–10 niches by Shorts creation volume. ~80–160 pieces of copy." },
               { w: "Week 3–4", d: "Build disambiguation flow in Shorts Create surface. A/B test against current prompt cards." },
               { w: "Week 5–8", d: "Measure: tap-through rate, prompt completion rate, time-to-publish, day-7 creator return." },
-              { w: "Week 9–12", d: "v2: LLM-generated Q-trees from user's first input. Viewer-signal-informed starting niche. Ship or kill." },
+              { w: "Week 9–12", d: "v2: LLM-generated Q-trees that adapt per niche, prior session, and creator history. This is where genAI does the personalization work, not in the prompt cards, but in the disambiguation engine itself. Ship or kill based on v1 signal." },
             ].map(s => (
               <div key={s.w} style={{ marginBottom: "14px" }}>
-                <div style={{ fontFamily: F.mono, fontSize: "11px", color: C.text, marginBottom: "3px" }}>{s.w}</div>
-                <p style={{ fontFamily: F.sans, fontSize: "13px", color: C.sub, lineHeight: 1.6 }}>{s.d}</p>
+                <div style={{ fontFamily: F.mono, fontSize: "13px", color: C.text, marginBottom: "3px" }}>{s.w}</div>
+                <p style={{ fontFamily: F.sans, fontSize: "15px", color: C.sub, lineHeight: 1.6 }}>{s.d}</p>
               </div>
             ))}
           </div>
@@ -613,8 +612,8 @@ function Strategy() {
               { m: "Day-7 creator return", d: "NaT signal. Did the user come back and create again within a week?" },
             ].map(s => (
               <div key={s.m} style={{ marginBottom: "14px" }}>
-                <div style={{ fontFamily: F.sans, fontSize: "13px", fontWeight: 600, color: C.text, marginBottom: "3px" }}>{s.m}</div>
-                <p style={{ fontFamily: F.sans, fontSize: "12px", color: C.sub, lineHeight: 1.55 }}>{s.d}</p>
+                <div style={{ fontFamily: F.sans, fontSize: "15px", fontWeight: 600, color: C.text, marginBottom: "3px" }}>{s.m}</div>
+                <p style={{ fontFamily: F.sans, fontSize: "14px", color: C.sub, lineHeight: 1.55 }}>{s.d}</p>
               </div>
             ))}
           </div>
@@ -633,7 +632,7 @@ function Footer() {
           <h3 style={{ fontFamily: F.serif, fontSize: "24px", color: C.text, fontWeight: 400, marginBottom: "12px" }}>
             Sidharth Sundaram
           </h3>
-          <p style={{ fontFamily: F.sans, fontSize: "13px", color: C.sub, lineHeight: 1.6, maxWidth: "480px" }}>
+          <p style={{ fontFamily: F.sans, fontSize: "15px", color: C.sub, lineHeight: 1.6, maxWidth: "480px" }}>
             MS Engineering Management, Purdue '27. 4 years product management in EdTech.
             I built{" "}
             <a href="https://creator-prep.vercel.app" target="_blank" rel="noopener"
@@ -644,9 +643,9 @@ function Footer() {
             for TikTok's Social & Creation team.
           </p>
           <div style={{ marginTop: "12px", display: "flex", gap: "16px", alignItems: "center" }}>
-            <a href="mailto:sidharth.rama@gmail.com" style={{ fontFamily: F.mono, fontSize: "12px", color: C.sub, textDecoration: "none" }}>sidharth.rama@gmail.com</a>
+            <a href="mailto:sidharth.rama@gmail.com" style={{ fontFamily: F.mono, fontSize: "14px", color: C.sub, textDecoration: "none" }}>sidharth.rama@gmail.com</a>
             <span style={{ color: C.dim }}>·</span>
-            <a href="https://www.linkedin.com/in/sidharthsundaram/" target="_blank" rel="noopener" style={{ fontFamily: F.mono, fontSize: "12px", color: C.sub, textDecoration: "none" }}>LinkedIn ↗</a>
+            <a href="https://www.linkedin.com/in/sidharthsundaram/" target="_blank" rel="noopener" style={{ fontFamily: F.mono, fontSize: "14px", color: C.sub, textDecoration: "none" }}>LinkedIn ↗</a>
           </div>
         </div>
         <div style={{ textAlign: "right" }}>
